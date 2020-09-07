@@ -15,12 +15,12 @@ public class Program {
         
         System.out.print("Enter department's name: ");
         String departmentName = sc.nextLine();
-        System.out.print("Enter worker data: ");
-        System.out.println("Name: ");
+        System.out.println("Enter worker data: ");
+        System.out.print("Name: ");
         String workerName = sc.nextLine();
-        System.out.println("Level: ");
+        System.out.print("Level: ");
         String workerLevel = sc.nextLine();
-        System.out.println("Base Salary: ");
+        System.out.print("Base Salary: ");
         double baseSalary = sc.nextDouble();
         
         Worker worker = new Worker(workerName, WorkerLevel.valueOf(workerLevel), baseSalary, new Department(departmentName));
@@ -47,5 +47,7 @@ public class Program {
         int month = Integer.parseInt(monthAndYear.substring(0,2));
         int year = Integer.parseInt(monthAndYear.substring(3));
         System.out.println("Name: "+ worker.getName());
+        System.out.println("Department: " + worker.getDepartment().getName());
+        System.out.println("Income for: " + monthAndYear + ": " + String.format("%.2f",worker.income(year,month)));
     }
 }
